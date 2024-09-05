@@ -319,6 +319,25 @@ SELECT
 FROM ##TestTable
 ```
 
+# EF Core
++ https://github.com/Gabegi/EF_Core-Repository-Pattern_RestAPI/tree/main
++ https://github.com/Gabegi/EF_Core-Repository-Pattern_RestAPI/tree/development
++ https://github.com/Gabegi/EntityFrameworkCoreCodeFirst
+
+# Repository and Unit of Work Patterns
++ https://hackernoon.com/how-to-simplify-data-access-using-ef
++ https://www.linkedin.com/pulse/repository-unit-work-patterns-net-core-dimitar-iliev/
++ https://github.com/DimitarIliev/Unit-Of-Work-Repository-Patterns/
++ https://dev.to/karenpayneoregon/gentle-introduction-to-generic-repository-pattern-with-c-1jn0
++ https://www.code-review.tech/repository-pattern-for-modular-code/
++ https://github.com/karenpayneoregon/generic-repository-samples/
++ https://dev.to/karenpayneoregon/gentle-introduction-for-generics-c-4232
++ https://hackernoon.com/how-to-simplify-data-access-using-ef
++ https://blog.devgenius.io/simplifying-the-repository-pattern-a-guide-for-c-and-net-developers-5eecf2d1db8c
+
+# Export CSV
++ https://github.com/kimdiep/pusheen-custom-fileresult-csv-export-aspnetcore/
+
 # References
 + https://learn.microsoft.com/en-us/dotnet/framework/data/adonet/sql/table-valued-parameters
 + https://sii.pl/blog/en/using-table-valued-parameters-with-dapper-in-net/
