@@ -1,11 +1,19 @@
 # Dapper Pro
 + Dapper
 + Dapper.Contrib
-+ Transaction
++ Connection and SqlConnection (IDbConnection)
++ Transaction and SqlTransaction (IDbTransaction)
+	+ [SqlTransaction Class](https://learn.microsoft.com/en-us/dotnet/api/system.data.sqlclient.sqltransaction)
+	+ [SqlTransaction Class](https://learn.microsoft.com/en-us/dotnet/api/microsoft.data.sqlclient.sqltransaction)
 + Stored Procedure
 + Table Value Parameters (TVP)
 + [DataTable (C#)](https://learn.microsoft.com/en-us/dotnet/api/system.data.datatable)
 + Dapper with Entity Framework (EF6 or EF Core)
++ DbContext
+
+```
+public interface IDbContextFactory<TContext> where TContext : DbContext
+```
 
 ## Dapper and Transaction
 ```
@@ -194,6 +202,7 @@ public class EmployeeRepository : IEmployeeRepository
 ```
 using Dapper;
 using System.Data;
+
 using (IDbConnection connection = new SqlConnection(connectionString))
 {
     var result = connection.Query<Product>("SELECT * FROM Products WHERE CategoryID = @CategoryID", new { CategoryID = 1 });
@@ -255,12 +264,28 @@ public class OrderService : IOrderService
 }
 ```
 
-# References
-+ https://learn.microsoft.com/en-us/dotnet/framework/data/adonet/sql/table-valued-parameters
-+ https://sii.pl/blog/en/using-table-valued-parameters-with-dapper-in-net/
-+ https://docs.google.com/document/d/1PL2eMklOxoS3jvxeC9JB6RuEAN9wNE4I0Xp_XdKzVOE/ (manhng83@gmail.com)
+## IDbContext Interface
++ https://subscription.packtpub.com/book/programming/9781785883309/1/ch01lvl1sec15/implementing-the-repository-pattern
++ https://git.hyvatech.com/tabakhpour/ifc/-/blob/1486b81a6189059a2ae73910a82ae74940cef97c/Libraries/Nop.Data/IDbContext.cs
 
-# Find the maximum or minimum value from different columns in a table of the same data type
+```
+public interface IDbContext : IDisposable
+```
+
+## IDbContextFactory<TContext> Interface
++ https://learn.microsoft.com/en-us/dotnet/api/microsoft.entityframeworkcore.idbcontextfactory-1?view=efcore-8.0
++ https://learn.microsoft.com/en-us/dotnet/api/microsoft.entityframeworkcore.dbcontext?view=efcore-8.0
+
+```
+public interface IDbContextFactory<TContext> where TContext : DbContext
+```
+
+## DbContext Class
+```
+public class DbContext : IAsyncDisposable, IDisposable, Microsoft.EntityFrameworkCore.Infrastructure.IInfrastructure<IServiceProvider>, Microsoft.EntityFrameworkCore.Internal.IDbContextDependencies, Microsoft.EntityFrameworkCore.Internal.IDbContextPoolable, Microsoft.EntityFrameworkCore.Internal.IDbSetCache
+```
+
+## Find the maximum or minimum value from different columns in a table of the same data type
 + https://www.mssqltips.com/sqlservertip/4067/find-max-value-from-multiple-columns-in-a-sql-server-table/
 
 ```
@@ -293,3 +318,9 @@ SELECT
    AS LastUpdateDate
 FROM ##TestTable
 ```
+
+# References
++ https://learn.microsoft.com/en-us/dotnet/framework/data/adonet/sql/table-valued-parameters
++ https://sii.pl/blog/en/using-table-valued-parameters-with-dapper-in-net/
++ https://www.ssw.com.au/rules/migrate-from-edmx-to-ef-core/
++ https://docs.google.com/document/d/1PL2eMklOxoS3jvxeC9JB6RuEAN9wNE4I0Xp_XdKzVOE/ (manhng83@gmail.com) (gtechsltn@gmail.com)
