@@ -4,7 +4,8 @@
 + Transaction
 + Stored Procedure
 + Table Value Parameters (TVP)
-+ DataTable (C#)
++ [DataTable (C#)](https://learn.microsoft.com/en-us/dotnet/api/system.data.datatable)
++ Dapper with Entity Framework (EF6 or EF Core)
 
 ## Dapper and Transaction
 ```
