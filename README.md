@@ -3,8 +3,8 @@
 + Dapper.Contrib
 + Connection and SqlConnection (IDbConnection)
 + Transaction and SqlTransaction (IDbTransaction)
-	+ [SqlTransaction Class](https://learn.microsoft.com/en-us/dotnet/api/system.data.sqlclient.sqltransaction)
-	+ [SqlTransaction Class](https://learn.microsoft.com/en-us/dotnet/api/microsoft.data.sqlclient.sqltransaction)
+	+ [SqlTransaction Class in System.Data.SqlClient](https://learn.microsoft.com/en-us/dotnet/api/system.data.sqlclient.sqltransaction)
+	+ [SqlTransaction Class in Microsoft.Data.SqlClient](https://learn.microsoft.com/en-us/dotnet/api/microsoft.data.sqlclient.sqltransaction)
 + Stored Procedure
 + Table Value Parameters (TVP)
 + [DataTable (C#)](https://learn.microsoft.com/en-us/dotnet/api/system.data.datatable)
