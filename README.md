@@ -15,6 +15,45 @@
 public interface IDbContextFactory<TContext> where TContext : DbContext
 ```
 
+# Dapper and Extensions
++ Dapper (Install-Package Dapper)
++ Dapper.Contrib (Install-Package Dapper.Contrib)
++ Dapper.SimpleCRUD (Install-Package Dapper.SimpleCRUD)
++ Dapper.FastCRUD (Install-Package Dapper.FastCRUD)
++ DapperExtensions (Install-Package DapperExtensions)
+
+## DapperExtensions
+https://github.com/tmsmith/Dapper-Extensions
+
+## Dapper.SimpleCRUD
+https://github.com/ericdc1/Dapper.SimpleCRUD
+
+## Dapper.FastCRUD
+https://github.com/MoonStorm/FastCrud
+
+## Dapper.Contrib
+https://github.com/DapperLib/Dapper.Contrib
+
+```
+using Dapper.Contrib.Extensions;
+
+[Table ("Products")]
+public class Product
+{
+    public int Id { get; set; }
+    public string Name { get; set; }
+}
+```
+## Dapper.Contrib.Bulk
+
+https://github.com/nghiand1010/Dapper.Contrib.Bulk
+
+https://dev.to/nghiand1010/bulk-insert-bulk-delete-bulk-update-with-dapper-by-bulkdapper-3lcj
+
+```
+dotnet add package Bulk.Dapper
+```
+
 ## Dapper and Transaction
 ```
 using (var transaction = connection.BeginTransaction())
